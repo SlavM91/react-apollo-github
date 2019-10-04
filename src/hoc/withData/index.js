@@ -1,0 +1,1 @@
+export { TableWithData, withData } from './withData.jsx'

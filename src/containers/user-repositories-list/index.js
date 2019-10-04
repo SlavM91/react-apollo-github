@@ -1,0 +1,1 @@
+export { UserRepositoriesListContainer } from './userRepositoriesListContainer.jsx'
