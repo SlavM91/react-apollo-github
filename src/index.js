@@ -1,16 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { PersistGate } from 'redux-persist/integration/react'
-import { Provider } from 'react-redux';
-import storage from './store';
+import { ApolloProvider } from 'react-apollo'
 import { RepositoriesPage } from './pages';
+import ApolloClient from 'apollo-boost';
 
-const { store, persistor } = storage();
+const client = new ApolloClient({
+    uri: 'https://api.github.com/graphql'
+});
+
 
 ReactDOM.render(
-    <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-            <RepositoriesPage/>
-        </PersistGate>
-    </Provider>
+    <ApolloProvider client={client}>
+        <RepositoriesPage/>
+    </ApolloProvider>
     , document.getElementById('root'));

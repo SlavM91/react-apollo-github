@@ -2,7 +2,8 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require('path');
 
 module.exports = {
-    mode: 'production',
+    mode: 'development',
+    devtool: "eval-source-map",
     output: {
         libraryTarget: "umd",
         umdNamedDefine: true,
@@ -14,7 +15,6 @@ module.exports = {
             '@components': path.resolve(__dirname, 'src/components/'),
             '@containers': path.resolve(__dirname, 'src/containers/'),
             '@constants': path.resolve(__dirname, 'src/constants/'),
-            '@actions': path.resolve(__dirname, 'src/actions/'),
             '@utils': path.resolve(__dirname, 'src/utils/'),
             '@hoc': path.resolve(__dirname, 'src/hoc/'),
         },
